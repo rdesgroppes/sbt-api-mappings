@@ -22,7 +22,7 @@ object SonatypeApiMappingRule extends AutoPlugin {
   }
 
   override def projectSettings = {
-    apiMappingRules := apiMappingRules.value.orElse(sonatypeRule)
+    apiMappingRules := sonatypeRule.orElse(apiMappingRules.value)
   }
 
 }
